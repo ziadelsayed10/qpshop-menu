@@ -140,7 +140,7 @@ import mshsoarshrk from '../images/gharpiiii/gatoah-soareh/mshsoarshrk.webp'
 
 // اسبشيال بيس 
 import espp1 from '../images/gharpiiii/especia-bes/espp1.webp'
-
+import espp2 from '../images/gharpiiii/especia-bes/espp2.webp'
 import espp3 from '../images/gharpiiii/especia-bes/espp3.webp'
 import espp4 from '../images/gharpiiii/especia-bes/espp4.webp'
 import espp5 from '../images/gharpiiii/especia-bes/espp5.webp'
@@ -420,7 +420,7 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         { name:  "كراميل مدور" , price:"520 جنيه" , img: `${tfcrml}` },
         { name:  "شوكلت" , price:"580 جنيه" , img: `${tfchoc}` },
         { name:  "سيزون 4 ايطالي" , price:"540 جنيه" , img: `${tfses4ita}` },
-        { name:  "بنانا كوكونت" , price:"550 جنيه" , img: `${tf9}` },
+        // { name:  "بنانا كوكونت" , price:"550 جنيه" , img: `${tf9}` },
         { name:  "جالاكسي" , price:"700 جنيه" , img: `${tfglx}` },
         { name:  "ميلك فروت" , price:"600 جنيه" , img: `${tf11}` },
         { name:  "توتي" , price:"500 جنيه" , img: `${toti}` },
@@ -456,7 +456,7 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         { name:  "تورتة ميني شوكلت كيندر" , price:"365 جنيه" , img: `${tmchockndr}` },
         { name:  "ميني ريد فيلفت" , price:"240 جنيه" , img: `${tmred}` },
         { name:  "تورتة ميني اوريو" , price:"300 جنيه" , img: `${tmoreo}` },
-        { name:  "تورتة ميني فراولة" , price:"285 جنيه" , img: `${tm6}` },
+        { name:  "تورتة ميني فواكة" , price:"285 جنيه" , img: `${tm6}` },
         { name:  "تورتة لي برنسس" , price:"375 جنيه" , img: `${tmleprnc}` },
 
       ],
@@ -591,7 +591,7 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         { name:  "سواريه 20 ق" , price:"210 جنيه" , img: `${soars20}` },
         { name:  "سواريه 40 ق" , price:"420 جنيه" , img: `${soak40}` },
         { name:  "مشكل سواريه & شرقي" , price:"450 جنيه" , img: `${mshsoarshrk}` },
-        { name:  "بوكس مادلين" , price:"250 جنيه" , img: `${boxsada}` },
+        // { name:  "بوكس مادلين" , price:"250 جنيه" , img: `${boxsada}` },
         // { name:  "بوكس السعادة" , price:"400 جنيه" , img: `${boxsada}` },
 
       ],
@@ -638,7 +638,7 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       // اسبشيال بيس
       20:[
         { name:  "كب كيك شيكولاتة" , price:"45 جنيه" , img: `${espp1}` },
-        { name:  "كب كيك فانيليا" , price:"45 جنيه" , img: `${waiting}` },
+        { name:  "كب كيك فانيليا" , price:"45 جنيه" , img: `${espp2}` },
         { name:  "قطعة مافن كيك" , price:"45 جنيه" , img: `${espp3}` },
         { name:  "قطعة كيك فانيليا" , price:"40 جنيه" , img: `${espp4}` },
         { name:  "قطعة كيك براوني" , price:"50 جنيه" , img: `${espp5}` },
