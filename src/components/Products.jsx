@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 import basbosabondk from '../images/sharqiiii/basbosa/basbosabondk.webp'
 // import basbosaturkilots from '../images/sharqiiii/basbosa/basbosaturkilots.webp'
@@ -412,22 +412,22 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       // الغربييييييييييييييييييييييييييي
       // تورت فرنسي
       2:[
-        { name:  "8 سيزون" , price:"550 جنيه" , img: `${tfses8}` },
-        { name:  "وايت روشية" , price:"600 جنيه" , img: `${tfwrosh}` },
-        { name:  "بلاك فورست" , price:"560 جنيه" , img: `${blcfrst}` },
-        { name:  "هاف" , price:"520 جنيه" , img: `${tfhaf}` },
-        { name:  "ميكس فروت" , price:"580 جنيه" , img: `${tf5}` },
-        { name:  "كراميل مدور" , price:"520 جنيه" , img: `${tfcrml}` },
-        { name:  "شوكلت" , price:"580 جنيه" , img: `${tfchoc}` },
-        { name:  "سيزون 4 ايطالي" , price:"540 جنيه" , img: `${tfses4ita}` },
+        { name:  "8 سيزون" , price:"585 جنيه" , img: `${tfses8}` },
+        { name:  "وايت روشية" , price:"675 جنيه" , img: `${tfwrosh}` },
+        { name:  "بلاك فورست" , price:"550 جنيه" , img: `${blcfrst}` },
+        { name:  "هاف" , price:"550 جنيه" , img: `${tfhaf}` },
+        { name:  "ميكس فروت" , price:"585 جنيه" , img: `${tf5}` },
+        { name:  "كراميل مدور" , price:"560 جنيه" , img: `${tfcrml}` },
+        { name:  "شوكلت" , price:"625 جنيه" , img: `${tfchoc}` },
+        { name:  "سيزون 4 ايطالي" , price:"545 جنيه" , img: `${tfses4ita}` },
         // { name:  "بنانا كوكونت" , price:"550 جنيه" , img: `${tf9}` },
-        { name:  "جالاكسي" , price:"700 جنيه" , img: `${tfglx}` },
-        { name:  "ميلك فروت" , price:"600 جنيه" , img: `${tf11}` },
-        { name:  "توتي" , price:"500 جنيه" , img: `${toti}` },
-        { name:  "فادج" , price:"650 جنيه" , img: `${tffadg}` },
-        { name:  "شوكلت كراميل" , price:"520 جنيه" , img: `${tf14}` },
-        { name:  "شوكلت هازلنت" , price:"540 جنيه" , img: `${tf15}` },
-        { name:  "فروت شيري" , price:"470 جنيه" , img: `${tffrtcher}` },
+        { name:  "جالاكسي" , price:"735 جنيه" , img: `${tfglx}` },
+        { name:  "ميلك فروت" , price:"625 جنيه" , img: `${tf11}` },
+        { name:  "توتي" , price:"515 جنيه" , img: `${toti}` },
+        { name:  "فادج" , price:"690 جنيه" , img: `${tffadg}` },
+        { name:  "شوكلت كراميل" , price:"535 جنيه" , img: `${tf14}` },
+        { name:  "شوكلت هازلنت" , price:"675 جنيه" , img: `${tf15}` },
+        { name:  "فروت شيري" , price:"525 جنيه" , img: `${tffrtcher}` },
         { name:  "نوتيلا" , price:"600 جنيه" , img: `${tfnotl}` },
         { name:  "جالاكسي فاكهة" , price:"650 جنيه" , img: `${tortgalxfakh}` },
         // { name:  "تورتة جيفارا" , price:"720 جنيه" , img: `${gefar}` },
@@ -441,33 +441,33 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // تورت اميركان
       3:[
-        { name:  "اميركان لوتس ميكس بيري" , price:"450 جنيه" , img: `${tamrcmkxlots}` },
-        { name:  "اميركان بلاك فستق" , price:"450 جنيه" , img: `${amrcblkfstk}` },
-        { name:  "اميركان فور سيزون" , price:"550 جنيه" , img: `${tacamrc4ses}` },
-        { name:  "اميركان شوكلت نوتيلا" , price:"380 جنيه" , img: `${amrcblkchoc}` },
-        { name:  "اميركان لوتس" , price:"330 جنيه" , img: `${tamrclots}` },
+        { name:  "اميركان لوتس ميكس بيري" , price:"500 جنيه" , img: `${tamrcmkxlots}` },
+        { name:  "اميركان بلاك فستق" , price:"535 جنيه" , img: `${amrcblkfstk}` },
+        { name:  "اميركان فور سيزون" , price:"605 جنيه" , img: `${tacamrc4ses}` },
+        { name:  "اميركان شوكلت نوتيلا" , price:"450 جنيه" , img: `${amrcblkchoc}` },
+        { name:  "اميركان لوتس" , price:"425 جنيه" , img: `${tamrclots}` },
 
       ],
 
       // ميني تورتة 
       4:[
-        { name:  "تورتة ميني مستطيل شوكلت" , price:"420 جنيه" , img: `${tmmostchoc}` },
-        { name:  "تورتة ميني شوكلت" , price:"265 جنيه" , img: `${torminchoc}` },
-        { name:  "تورتة ميني شوكلت كيندر" , price:"365 جنيه" , img: `${tmchockndr}` },
-        { name:  "ميني ريد فيلفت" , price:"240 جنيه" , img: `${tmred}` },
-        { name:  "تورتة ميني اوريو" , price:"300 جنيه" , img: `${tmoreo}` },
-        { name:  "تورتة ميني فواكة" , price:"285 جنيه" , img: `${tm6}` },
-        { name:  "تورتة لي برنسس" , price:"375 جنيه" , img: `${tmleprnc}` },
+        { name:  "تورتة ميني مستطيل شوكلت" , price:"475 جنيه" , img: `${tmmostchoc}` },
+        { name:  "تورتة ميني شوكلت" , price:"375 جنيه" , img: `${torminchoc}` },
+        { name:  "تورتة ميني شوكلت كيندر" , price:"395 جنيه" , img: `${tmchockndr}` },
+        { name:  "ميني ريد فيلفت" , price:"355 جنيه" , img: `${tmred}` },
+        { name:  "تورتة ميني اوريو" , price:"425 جنيه" , img: `${tmoreo}` },
+        { name:  "تورتة ميني مانجو" , price:"325 جنيه" , img: `${tm6}` },
+        { name:  "تورتة لي برنسس" , price:"400 جنيه" , img: `${tmleprnc}` },
 
       ],
       // التورت الخاصة 
       5:[
         { name:  "تورتة مقاس خاص" , price:"" , img: `${tortmksatkhs}` },
-        { name:  " مقاس 25 * 25 سم" , price:"700 جنيه" , img: `${waiting}` },
-        { name:  " مقاس 30 * 40 سم" , price:"1000 جنيه" , img: `${waiting}` },
-        { name:  " مقاس 40 * 60 سم" , price:"1750 جنيه" , img: `${waiting}` },
-        { name:  "مقاس 30 سم مدور" , price:"950 جنيه" , img: `${waiting}` },
-        { name:  "مقاس 45 سم مدور" , price:"1600 جنيه" , img: `${waiting}` },
+        { name:  " مقاس 25 * 25 سم" , price:"850 جنيه" , img: `${waiting}` },
+        { name:  " مقاس 30 * 40 سم" , price:"1150 جنيه" , img: `${waiting}` },
+        { name:  " مقاس 40 * 60 سم" , price:"1850 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 30 سم مدور" , price:"1125 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 45 سم مدور" , price:"1800 جنيه" , img: `${waiting}` },
         { name:  "اضافة صورة صغيرة" , price:"120 جنيه" , img: `${waiting}` },
         { name:  "اضافة صورة كبيرة" , price:"150 جنيه" , img: `${waiting}` },
 
@@ -477,18 +477,18 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         { name:  "تورتة عجين السكر" , price:"" , img: `${tortagenskr1}` },
         { name:  "تورتة عجين السكر" , price:"" , img: `${tortagenskr2}` },
         { name:  "تورتة عجين السكر" , price:"" , img: `${tortagenskr3}` },
-        { name:  "مقاس 15" , price:"370:570 جنيه" , img: `${waiting}` },
-        { name:  "مقاس 20" , price:"750:950 جنيه" , img: `${waiting}` },
-        { name:  "مقاس 24" , price:"850:1050 جنيه" , img: `${waiting}` },
-        { name:  "مقاس 26" , price:"950:1250 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 15" , price:"400:600 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 20" , price:"800:1000 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 24" , price:"1000:1200 جنيه" , img: `${waiting}` },
+        { name:  "مقاس 26" , price:"1100:1300 جنيه" , img: `${waiting}` },
 
       ],
       // تري ليتشي 
       7:[
-        { name:  "تريلتشي نوتيلا" , price:"350 جنيه" , img: `${trenotil}` },
+        { name:  "تريلتشي نوتيلا" , price:"400 جنيه" , img: `${trenotil}` },
         // { name:  "تريلتشي لوتس" , price:"350 جنيه" , img: `${trelots}` },
-        { name:  "تريلتشي فاكهة" , price:"350 جنيه" , img: `${trel2}` },
-        { name:  "تريلتشي فراولة" , price:"350 جنيه" , img: `${trel3}` },
+        { name:  "تريلتشي فاكهة" , price:"400 جنيه" , img: `${trel2}` },
+        { name:  "تريلتشي فراولة" , price:"400 جنيه" , img: `${trel3}` },
         // { name:  "تريلتشي فيلاميندو" , price:"530 جنيه" , img: `${treflamd}` },
         // { name:  "تريلتشي صنداي لوتس" , price:"90 جنيه" , img: `${tresandlots}` },
         // { name:  "تريلتشي صنداي فاكهة" , price:"80 جنيه" , img: `${treletcesanfakha}` },
@@ -496,15 +496,15 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // بولات
       8:[
-        { name:  "ام علي" , price:"70 جنيه" , img: `${omali}` },
-        { name:  "ام علي كبير" , price:"175 جنيه" , img: `${omalkber}` },
-        { name:  "ارز باللبن لوتس" , price:"70 جنيه" , img: `${arzblots}` },
-        { name:  "ارز باللبن مكسرات" , price:"70 جنيه" , img: `${arzbmksr}` },
+        { name:  "ام علي" , price:"75 جنيه" , img: `${omali}` },
+        { name:  "ام علي كبير" , price:"240 جنيه" , img: `${omalkber}` },
+        { name:  "ارز باللبن لوتس" , price:"80 جنيه" , img: `${arzblots}` },
+        { name:  "ارز باللبن مكسرات" , price:"80 جنيه" , img: `${arzbmksr}` },
         { name:  "ارز باللبن مانجو" , price:"80 جنيه" , img: `${bol5}` },
         { name:  "بولة ملفاي سكر" , price:"450 جنيه" , img: `${bol6}` },
         { name:  "بولة ملفاي مشمش" , price:"450 جنيه" , img: `${bol7}` },
-        { name:  "بولة كراميل بورليه" , price:"400 جنيه" , img: `${bol8}` },
-        { name:  "بولة برفترول شيكولاتة" , price:"450 جنيه" , img: `${bol9}` },
+        { name:  "بولة كراميل بورليه" , price:"425 جنيه" , img: `${bol8}` },
+        { name:  "بولة برفترول شيكولاتة" , price:"480 جنيه" , img: `${bol9}` },
         { name:  "بولة ترافيل مانجو" , price:"335 جنيه" , img: `${bol10}` },
         // { name:  "ارز باللبن فواكة" , price:"70 جنيه" , img: `${orzlbnfakh}` },
         // { name:  "بولة بورليه" , price:" جنيه" , img: `${bolaborl}` },
@@ -518,12 +518,12 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         // { name:  "ميلك كريم شوكلت" , price:"70 جنيه" , img: `${mkchoc}` },
         // { name:  "ميلك كريم لوتس" , price:"70 جنيه" , img: `${mklots}` },
         // { name:  "ميلك كريم فاكهة" , price:"70 جنيه" , img: `${milkcremfakha}` },
-        { name:  "ميلك كريم ملفاي" , price:"80 جنيه" , img: `${mk1}` },
-        { name:  "ميلك كريم تراميسيو" , price:"80 جنيه" , img: `${mk2}` },
-        { name:  "ميلك كريم برفترول" , price:"80 جنيه" , img: `${mk3}` },
-        { name:  "ميلك كريم تريليتشي لوتس" , price:"80 جنيه" , img: `${mk4}` },
-        { name:  "ميلك كريم فراولة بستاشيو" , price:"80 جنيه" , img: `${mk5}` },
-        { name:  "ميلك كريم مانجو" , price:"80 جنيه" , img: `${mk6}` },
+        { name:  "ميلك كريم ملفاي" , price:"85 جنيه" , img: `${mk1}` },
+        { name:  "ميلك كريم تراميسيو" , price:"85 جنيه" , img: `${mk2}` },
+        { name:  "ميلك كريم برفترول" , price:"85 جنيه" , img: `${mk3}` },
+        { name:  "ميلك كريم تريليتشي لوتس" , price:"85 جنيه" , img: `${mk4}` },
+        { name:  "ميلك كريم فراولة بستاشيو" , price:"85 جنيه" , img: `${mk5}` },
+        { name:  "ميلك كريم مانجو" , price:"85 جنيه" , img: `${mk6}` },
 
       ],
       // نشيز كيك 
@@ -533,11 +533,11 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
         // { name:  "تورتة تشيز كيك" , price:" جنيه" , img: `${tortchec}` },
         // { name:  "سان سيباستيان" , price:"65 جنيه" , img: `${sansbas}` },
         // { name:  " تشيز كيك لوتس" , price:"80 جنيه" , img: `${waiting}` },
-        { name:  " تشيز كيك بلوبيري" , price:"80 جنيه" , img: `${chc1}` },
-        { name:  " تشيز كيك فراولة" , price:"80 جنيه" , img: `${chc2}` },
-        { name:  " تشيز كيك لوتس" , price:"80 جنيه" , img: `${chc3}` },
-        { name:  "سان سيباستيان ميكس بيري" , price:"65 جنيه" , img: `${chc4}` },
-        { name:  "سان سيباستيان نوتيلا" , price:"65 جنيه" , img: `${chc5}` },
+        { name:  " تشيز كيك بلوبيري" , price:"90 جنيه" , img: `${chc1}` },
+        { name:  " تشيز كيك فراولة" , price:"90 جنيه" , img: `${chc2}` },
+        { name:  " تشيز كيك لوتس" , price:"90 جنيه" , img: `${chc3}` },
+        { name:  "سان سيباستيان ميكس بيري" , price:"80 جنيه" , img: `${chc4}` },
+        { name:  "سان سيباستيان نوتيلا" , price:"80 جنيه" , img: `${chc5}` },
         { name:  " تشيز كيك بارد فراولة" , price:"75 جنيه" , img: `${chc6}` },
         { name:  " تشيز كيك بارد لوتس" , price:"75 جنيه" , img: `${chc7}` },
         { name:  " تشيز كيك بارد بلوبيري" , price:"75 جنيه" , img: `${chc8}` },
@@ -545,11 +545,11 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // بلاك بيس 
       11:[
-        { name:  "بلاك بيس ريد فيلفيت" , price:"120 جنيه" , img: `${bbrfelf}` },
-        { name:  "بلاك بيس فستق" , price:"120 جنيه" , img: `${bbfstk}` },
-        { name:  "بلاك بيس شوكلت" , price:"120 جنيه" , img: `${bbshoc}` },
-        { name:  "بلاك بيس لوتس" , price:"120 جنيه" , img: `${bblots}` },
-        { name:  "بلاك بيس فواكة" , price:"120 جنيه" , img: `${blcbesfakh}` },
+        { name:  "بلاك بيس ريد فيلفيت" , price:"150 جنيه" , img: `${bbrfelf}` },
+        { name:  "بلاك بيس فستق" , price:"150 جنيه" , img: `${bbfstk}` },
+        { name:  "بلاك بيس شوكلت" , price:"150 جنيه" , img: `${bbshoc}` },
+        { name:  "بلاك بيس لوتس" , price:"150 جنيه" , img: `${bblots}` },
+        { name:  "بلاك بيس فواكة" , price:"150 جنيه" , img: `${blcbesfakh}` },
 
       ],
       // انجلش كيك 
@@ -564,22 +564,22 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // بودابست رول
       13:[
-        { name:  "بودابست رول ذبادي" , price:"65 جنيه" , img: `${bdb1}` },
-        { name:  "بودابست رول فستق" , price:"65 جنيه" , img: `${bdb2}` },
-        { name:  "بودابست رول شوكلت" , price:"65 جنيه" , img: `${bdb3}` },
-        { name:  "بودابست رول ريد فيلفت" , price:"65 جنيه" , img: `${bdb4}` },
+        { name:  "بودابست رول ذبادي" , price:"70 جنيه" , img: `${bdb1}` },
+        { name:  "بودابست رول فستق" , price:"70 جنيه" , img: `${bdb2}` },
+        { name:  "بودابست رول شوكلت" , price:"70 جنيه" , img: `${bdb3}` },
+        { name:  "بودابست رول ريد فيلفت" , price:"70 جنيه" , img: `${bdb4}` },
 
       ],
       // براونز استيك 
       14:[
-        { name:  "براونز استيك روشيه" , price:"95 جنيه" , img: `${brws1}` },
-        { name:  "براونز استيك كيندر" , price:"95 جنيه" , img: `${brws2}` },
-        { name:  "براونز استيك فستق" , price:"95 جنيه" , img: `${brws3}` },
+        { name:  "براونز استيك روشيه" , price:"115 جنيه" , img: `${brws1}` },
+        { name:  "براونز استيك كيندر" , price:"115 جنيه" , img: `${brws2}` },
+        { name:  "براونز استيك فستق" , price:"115 جنيه" , img: `${brws3}` },
       ],
       // جاتوه
       15:[
-        { name:  "جاتوه ايطالي" , price:"35 جنيه" , img: `${gthita}` },
-        { name:  "جاتوه امريكان" , price:"55 جنيه" , img: `${gthamerc}` },
+        { name:  "جاتوه ايطالي" , price:"40 جنيه" , img: `${gthita}` },
+        { name:  "جاتوه امريكان" , price:"65 جنيه" , img: `${gthamerc}` },
         // { name:  "جاتوه فرنساوي " , price:"60 جنيه" , img: `${gthfr}` },
         { name:  "جاتوه فرنساوي روشية" , price:"75 جنيه" , img: `${gthfrrosh}` },
         { name:  "جاتوه فرنساوي جالاكسي" , price:"75 جنيه" , img: `${gthfrglx}` },
@@ -588,47 +588,47 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // جاتوه سواريه 
       16:[
-        { name:  "سواريه 20 ق" , price:"210 جنيه" , img: `${soars20}` },
-        { name:  "سواريه 40 ق" , price:"420 جنيه" , img: `${soak40}` },
-        { name:  "مشكل سواريه & شرقي" , price:"450 جنيه" , img: `${mshsoarshrk}` },
+        { name:  "سواريه 20 ق" , price:"325 جنيه" , img: `${soars20}` },
+        { name:  "سواريه 40 ق" , price:"565 جنيه" , img: `${soak40}` },
+        { name:  "مشكل سواريه & شرقي" , price:"535 جنيه" , img: `${mshsoarshrk}` },
         // { name:  "بوكس مادلين" , price:"250 جنيه" , img: `${boxsada}` },
         // { name:  "بوكس السعادة" , price:"400 جنيه" , img: `${boxsada}` },
 
       ],
       // ملفاي
       17:[
-        { name:  "ملفاي لوتس" , price:"45 جنيه" , img: `${melflots}` },
-        { name:  "ملفاي مربي" , price:"45 جنيه" , img: `${melfmrba}` },
-        { name:  "ملفاي سكر" , price:"45 جنيه" , img: `${melfskr}` },
-        { name:  "ملفاي شوكلت" , price:"45 جنيه" , img: `${melfchoc}` },
-        { name:  "ملفاي مكسرات" , price:"45 جنيه" , img: `${melfmksr}` },
-        { name:  "ملفاي رول باستري" , price:"65 جنيه" , img: `${mlf6}` },
-        { name:  "قطعة ملفاي اسبشيال" , price:"70 جنيه" , img: `${qtamelfspc}` },
+        { name:  "ملفاي لوتس" , price:"50 جنيه" , img: `${melflots}` },
+        { name:  "ملفاي مربي" , price:"50 جنيه" , img: `${melfmrba}` },
+        { name:  "ملفاي سكر" , price:"50 جنيه" , img: `${melfskr}` },
+        { name:  "ملفاي شوكلت" , price:"50 جنيه" , img: `${melfchoc}` },
+        { name:  "ملفاي مكسرات" , price:"50 جنيه" , img: `${melfmksr}` },
+        { name:  "ملفاي رول باستري" , price:"75 جنيه" , img: `${mlf6}` },
+        { name:  "قطعة ملفاي اسبشيال" , price:"80 جنيه" , img: `${qtamelfspc}` },
 
       ],
       // اكلير
       18:[
-        { name:  "اكلير ميكس بيري" , price:"40 جنيه" , img: `${eclmksberr}` },
-        { name:  "اكلير كيندر" , price:"40 جنيه" , img: `${eclkndr}` },
-        { name:  "اكلير لوتس" , price:"40 جنيه" , img: `${ecllots}` },
-        { name:  "اكلير شوكلت" , price:"40 جنيه" , img: `${eclchoc}` },
-        { name:  "اكلير فاكهة" , price:"40 جنيه" , img: `${eclairfakh}` },
-        { name:  "اكلير نوتيلا" , price:"40 جنيه" , img: `${eclnotl}` },
-        { name:  "اكلير اسنيكرز" , price:"40 جنيه" , img: `${eclsnec}` },
-        { name:  "اكلير كراميل" , price:"40 جنيه" , img: `${eclcram}` },
+        { name:  "اكلير ميكس بيري" , price:"45 جنيه" , img: `${eclmksberr}` },
+        { name:  "اكلير كيندر" , price:"45 جنيه" , img: `${eclkndr}` },
+        { name:  "اكلير لوتس" , price:"45 جنيه" , img: `${ecllots}` },
+        { name:  "اكلير شوكلت" , price:"45 جنيه" , img: `${eclchoc}` },
+        { name:  "اكلير فاكهة" , price:"45 جنيه" , img: `${eclairfakh}` },
+        { name:  "اكلير نوتيلا" , price:"45 جنيه" , img: `${eclnotl}` },
+        { name:  "اكلير اسنيكرز" , price:"45 جنيه" , img: `${eclsnec}` },
+        { name:  "اكلير كراميل" , price:"45 جنيه" , img: `${eclcram}` },
 
       ],
       // ديزرت
       19:[
-        { name:  "باباة فواكة" , price:"65 جنيه" , img: `${babfwaka}` },
-        { name:  "سانت نوريه" , price:"60 جنيه" , img: `${des2}` },
-        { name:  "قطعة هوني كيك" , price:"70 جنيه" , img: `${qtahancak}` },
-        { name:  "مولتن كيك" , price:"85 جنيه" , img: `${moltcak}` },
+        { name:  "باباة فواكة" , price:"75 جنيه" , img: `${babfwaka}` },
+        { name:  "سانت نوريه" , price:"100 جنيه" , img: `${des2}` },
+        { name:  "قطعة هوني كيك" , price:"75 جنيه" , img: `${qtahancak}` },
+        { name:  "مولتن كيك" , price:"90 جنيه" , img: `${moltcak}` },
         { name:  "قطعة فاكهة" , price:"75 جنيه" , img: `${qtafakha}` },
-        { name:  "قطعة فادج" , price:"75 جنيه" , img: `${qtafdg}` },
-        { name:  "قطعة نوتيلا" , price:"100 جنيه" , img: `${qtanotl}` },
-        { name:  "قطعة تيراميسو بستاشيو" , price:"85 جنيه" , img: `${tramesbestch}` },
-        { name:  "قطعة تيراميسو" , price:"75 جنيه" , img: `${qtatrmsu}` },
+        { name:  "قطعة فادج" , price:"80 جنيه" , img: `${qtafdg}` },
+        { name:  "قطعة نوتيلا" , price:"115 جنيه" , img: `${qtanotl}` },
+        { name:  "قطعة تيراميسو بستاشيو" , price:"75 جنيه" , img: `${tramesbestch}` },
+        { name:  "قطعة تيراميسو" , price:"90 جنيه" , img: `${qtatrmsu}` },
         // { name:  "سانت نوريه شوكلت" , price:"100 جنيه" , img: `${santnorchoc}` },
         // { name:  "سانت نوريه بلوبيري" , price:"100 جنيه" , img: `${santnorblu}` },
         // { name:  "بودابيست رول" , price:"65 جنيه" , img: `${bodabestrol}` },
@@ -637,17 +637,17 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
       ],
       // اسبشيال بيس
       20:[
-        { name:  "كب كيك شيكولاتة" , price:"45 جنيه" , img: `${espp1}` },
-        { name:  "كب كيك فانيليا" , price:"45 جنيه" , img: `${espp2}` },
+        { name:  "كب كيك شيكولاتة" , price:"50 جنيه" , img: `${espp1}` },
+        { name:  "كب كيك فانيليا" , price:"50جنيه" , img: `${espp2}` },
         { name:  "قطعة مافن كيك" , price:"45 جنيه" , img: `${espp3}` },
-        { name:  "قطعة كيك فانيليا" , price:"40 جنيه" , img: `${espp4}` },
-        { name:  "قطعة كيك براوني" , price:"50 جنيه" , img: `${espp5}` },
-        { name:  "قطعة كيك هاني" , price:"45 جنيه" , img: `${espp6}` },
-        { name:  "قطعة كيك صخر" , price:"50 جنيه" , img: `${espp7}` },
-        { name:  "قطعة كوكيز" , price:"50 جنيه" , img: `${espp8}` },
-        { name:  "قطعة سابليه" , price:"40 جنيه" , img: `${espp9}` },
-        { name:  "مارينج" , price:"60 جنيه" , img: `${espp10}` },
-        { name:  "ماكرون 9 ق" , price:"110 جنيه" , img: `${espp11}` },
+        { name:  "قطعة كيك فانيليا" , price:"50 جنيه" , img: `${espp4}` },
+        { name:  "قطعة كيك براوني" , price:"55 جنيه" , img: `${espp5}` },
+        { name:  "قطعة كيك هاني" , price:"50 جنيه" , img: `${espp6}` },
+        { name:  "قطعة كيك صخر" , price:"55 جنيه" , img: `${espp7}` },
+        { name:  "قطعة كوكيز" , price:"65 جنيه" , img: `${espp8}` },
+        { name:  "قطعة سابليه" , price:"60 جنيه" , img: `${espp9}` },
+        { name:  "مارينج" , price:"75 جنيه" , img: `${espp10}` },
+        { name:  "ماكرون 9 ق" , price:"125 جنيه" , img: `${espp11}` },
         // { name:  "كب كيك نوتيلا" , price:"45 جنيه" , img: `${capcaknotl}` },
         // { name:  "كب كيك لوتس" , price:"45 جنيه" , img: `${capcaklots}` },
         // { name:  "كب كيك كراميل" , price:"45 جنيه" , img: `${capcakcarm}` },
@@ -662,41 +662,41 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
 
       // شيكولاته
       21:[
-        { name:  "شيكولاتة سادة" , price:"400 جنيه" , img: `${cho1}` },
-        { name:  "شيكولاتة كراميل" , price:"400 جنيه" , img: `${chocaraml}` },
-        { name:  "شيكولاتة لوز" , price:"400 جنيه" , img: `${choloz}` },
-        { name:  "شيكولاتة بندق" , price:"400 جنيه" , img: `${chobndk}` },
-        { name:  "شيكولاتة اوريو" , price:"400 جنيه" , img: `${chooreo}` },
-        { name:  "شيكولاتة 6 بندقات" , price:"400 جنيه" , img: `${cho6bndk}` },
-        { name:  "شيكولاتة كريمة حليب" , price:"400 جنيه" , img: `${chocremhalb}` },
-        { name:  "شيكولاتة كريمة بندق" , price:"400 جنيه" , img: `${chocrebndk}` },
-        { name:  "شيكولاتة كريمة قهوة" , price:"400 جنيه" , img: `${chocremkahwa}` },
-        { name:  "شيكولاتة قلب مكسرات" , price:"400 جنيه" , img: `${choalbmksr}` },
-        { name:  "شيكولاتة سبيكة مكسرات" , price:"400 جنيه" , img: `${chosabkmksr}` },
-        { name:  "شيكولاتة نوتيلا مكسرات" , price:"400 جنيه" , img: `${chonotilmksr}` },
-        { name:  "شيكولاتة حشو طبيعي" , price:"400 جنيه" , img: `${chohashwtabeie}` },
+        { name:  "شيكولاتة سادة" , price:"450 جنيه" , img: `${cho1}` },
+        { name:  "شيكولاتة كراميل" , price:"450 جنيه" , img: `${chocaraml}` },
+        { name:  "شيكولاتة لوز" , price:"450 جنيه" , img: `${choloz}` },
+        { name:  "شيكولاتة بندق" , price:"450 جنيه" , img: `${chobndk}` },
+        { name:  "شيكولاتة اوريو" , price:"450 جنيه" , img: `${chooreo}` },
+        { name:  "شيكولاتة 6 بندقات" , price:"450 جنيه" , img: `${cho6bndk}` },
+        { name:  "شيكولاتة كريمة حليب" , price:"450 جنيه" , img: `${chocremhalb}` },
+        { name:  "شيكولاتة كريمة بندق" , price:"450 جنيه" , img: `${chocrebndk}` },
+        { name:  "شيكولاتة كريمة قهوة" , price:"450 جنيه" , img: `${chocremkahwa}` },
+        { name:  "شيكولاتة قلب مكسرات" , price:"450 جنيه" , img: `${choalbmksr}` },
+        { name:  "شيكولاتة سبيكة مكسرات" , price:"450 جنيه" , img: `${chosabkmksr}` },
+        { name:  "شيكولاتة نوتيلا مكسرات" , price:"450 جنيه" , img: `${chonotilmksr}` },
+        { name:  "شيكولاتة حشو طبيعي" , price:"450 جنيه" , img: `${chohashwtabeie}` },
       ],
 
 
      
     //  ايس كريك كيك 
       22:[
-        { name:  "ايس كريم كيك (فراولة & مانجو)" , price:"540 جنيه" , img: `${iccfrawlmang}` },
-        { name:  "ايس كريم كيك (اسنيكرز & كراميل)" , price:"540 جنيه" , img: `${iccsnec}` },
-        { name:  "ايس كريم كيك (روشية)" , price:"535 جنيه" , img: `${iccchoc}` },
-        { name:  "ايس كريم كيك (لوتس)" , price:"535 جنيه" , img: `${icecklots}` },
-        { name:  "ايس كريم كيك (كيت كات)" , price:"540 جنيه" , img: `${icckitkat}` },
-        { name:  "ايس كريم كيك (شوكلت دبي)" , price:"550 جنيه" , img: `${iccchocdbu}` },
+        { name:  "ايس كريم كيك (فراولة & مانجو)" , price:"575 جنيه" , img: `${iccfrawlmang}` },
+        { name:  "ايس كريم كيك (اسنيكرز & كراميل)" , price:"575 جنيه" , img: `${iccsnec}` },
+        { name:  "ايس كريم كيك (روشية)" , price:"575 جنيه" , img: `${iccchoc}` },
+        { name:  "ايس كريم كيك (لوتس)" , price:"575 جنيه" , img: `${icecklots}` },
+        { name:  "ايس كريم كيك (كيت كات)" , price:"575 جنيه" , img: `${icckitkat}` },
+        { name:  "ايس كريم كيك (شوكلت دبي)" , price:"555 جنيه" , img: `${iccchocdbu}` },
         { name:  "ايس كريم كيك (اوريو)" , price:"535 جنيه" , img: `${icecoreo}` },
-        { name:  "ايس كريم كيك (ذبادي توت)" , price:"520 جنيه" , img: `${iceczbadtot}` },
-        { name:  "ايس كريم كيك (فستق)" , price:"535 جنيه" , img: `${icefostk}` },
-        { name:  "تورتة ايس (شوكلت & فانيليا)" , price:"540 جنيه" , img: `${icechocfan}` },
+        { name:  "ايس كريم كيك (ذبادي توت)" , price:"525 جنيه" , img: `${iceczbadtot}` },
+        { name:  "ايس كريم كيك (فستق)" , price:"575 جنيه" , img: `${icefostk}` },
+        { name:  "تورتة ايس (شوكلت & فانيليا)" , price:"575 جنيه" , img: `${icechocfan}` },
       ],
       // الايس كريم 
       23:[
-        { name:  "بولة ايس كريم" , price:"30 جنيه" , img: `${bolice}` },
-        { name:  "بولة ايس كريم بسكوت" , price:"35 جنيه" , img: `${bolicebask}` },
-        { name:  "ايس كريم كيلو" , price:"300 جنيه" , img: `${iceckelo}` },
+        { name:  "بولة ايس كريم" , price:"35 جنيه" , img: `${bolice}` },
+        { name:  "بولة ايس كريم بسكوت" , price:"40 جنيه" , img: `${bolicebask}` },
+        { name:  "ايس كريم كيلو" , price:"350 جنيه" , img: `${iceckelo}` },
         // { name:  "جار ايس كريم" , price:" جنيه" , img: `${garice}` },
 
       ],
@@ -707,92 +707,92 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
 
 // بسبوسة
           24: [
-        { name:  "بسبوسة سادة" , price: "250 جنيه" , img:  `${basbosasada}`},
-        { name:  " بسبوسة بندق" , price:  "285 جنيه" , img: `${basbosabondk}` },
-        { name:  "بسبوسة مكسرات" , price: "285 جنيه" , img: `${basmksr}`},
+        { name:  "بسبوسة سادة" , price: "260 جنيه" , img:  `${basbosasada}`},
+        { name:  " بسبوسة بندق" , price:  "310 جنيه" , img: `${basbosabondk}` },
+        { name:  "بسبوسة مكسرات" , price: "310 جنيه" , img: `${basmksr}`},
         { name:  "بسبوسة تريلتشي" , price: "350 جنيه" , img:  `${basbosatreltche}`},
-        { name:  "بسبوسة تركي كريمة" , price: "200 جنيه" , img: `${basturcre}`},
+        { name:  "بسبوسة تركي كريمة" , price: "310 جنيه" , img: `${basturcre}`},
         // { name:  "بسبوسة تركي نوتيلا" , price:  "330 جنيه" , img: `${basbosaturkinotila}` },
         // { name:"بسبوسة تركي لوتس" , price: "385 جنيه" , img: `${basbosaturkilots}`},
       ],
       // كنافة 
       25: [
-        { name:  "كنافة بصمة سادة" , price:"300 جنيه" , img: `${knbasmsada}` },
-        { name:  "كنافة بصمة عجوة" , price:"300 جنيه" , img: `${knbsmaagwa}` },
-        { name:  "كنافة بصمة بندق" , price:"475 جنيه" , img: `${knbasmbondok}` },
-        { name:  "كنافة بصمة عين جمل" , price:"475 جنيه" , img: `${knbasmgmal}` },
+        { name:  "كنافة بصمة سادة" , price:"320 جنيه" , img: `${knbasmsada}` },
+        { name:  "كنافة بصمة عجوة" , price:"360 جنيه" , img: `${knbsmaagwa}` },
+        { name:  "كنافة بصمة بندق" , price:"500 جنيه" , img: `${knbasmbondok}` },
+        { name:  "كنافة بصمة عين جمل" , price:"500 جنيه" , img: `${knbasmgmal}` },
         { name:  "كنافة بصمة فستق" , price:"1500 جنيه" , img: `${knbasmfostok}` },
-        { name:  "كنافة بصمة ماكس" , price:"600 جنيه" , img: `${knbasmmaks}` },
-        { name:  "كنافة بصمة كاجو" , price:"475 جنيه" , img: `${knbasmajajo}` },
-        { name:  "كنافة بورمة ماكس" , price:"475 جنيه" , img: `${knbormmax}` },
+        { name:  "كنافة بصمة ماكس" , price:"650 جنيه" , img: `${knbasmmaks}` },
+        { name:  "كنافة بصمة كاجو" , price:"500 جنيه" , img: `${knbasmajajo}` },
+        { name:  "كنافة بورمة ماكس" , price:"650 جنيه" , img: `${knbormmax}` },
         { name:  "كنافة بورمة فستق" , price:"1500 جنيه" , img: `${knbormfostk}` },
-        { name:  "كنافة سيجار سادة" , price:"275 جنيه" , img: `${knsegsad}` },
-        { name:  "كنافة سيجار بندق" , price:"420 جنيه" , img: `${knsegarbndk}` },
-        { name:  "كنافة اساور بندق" , price:"320 جنيه" ,img: `${knfaswrbndk}` },
-        { name:  "كنافة اساور نوتيلا" , price:"325 جنيه" ,img: `${knaswrnotila}` },
+        { name:  "كنافة سيجار سادة" , price:"350 جنيه" , img: `${knsegsad}` },
+        { name:  "كنافة سيجار بندق" , price:"470 جنيه" , img: `${knsegarbndk}` },
+        { name:  "كنافة اساور بندق" , price:"360 جنيه" ,img: `${knfaswrbndk}` },
+        { name:  "كنافة اساور نوتيلا" , price:"375 جنيه" ,img: `${knaswrnotila}` },
         { name:  "كنافة اساور لوكس" , price:"475 جنيه" ,img: `${knasawrloks}` },
-        { name:  "كنافة كريمة" , price:"275 جنيه" , img: `${knkrem}` },
+        { name:  "كنافة كريمة" , price:"310 جنيه" , img: `${knkrem}` },
         { name:  "كنافة قشطة" , price:"350 جنيه" , img: `${knesh}` },
-        { name:  "كنافة مانجو" , price:"375 جنيه" ,img: `${knfmango}` },
+        { name:  "كنافة مانجو" , price:"300 جنيه" ,img: `${knfmango}` },
         { name:  "كنافة نوتيلا" , price:"350 جنيه" , img: `${knnotil}` },
-        { name:  "كنافة كورنيه" , price:"320 جنيه" , img: `${knkorne}` },
+        { name:  "كنافة كورنيه" , price:"375 جنيه" , img: `${knkorne}` },
       ],
 
       // شرقيات 
       26: [
-        { name:  "هريسة شامي" , price:"300 جنيه" , img: `${hressham}` },
-        { name:  "هريسة زبيب" , price:"200 جنيه" , img: `${hreszbeb}` },
-        { name:  "هريسة مكسرات" , price:"300 جنيه" , img: `${hresa}` },
-        { name:  "رموش" , price:"300 جنيه" , img: `${rmosh}` },
-        { name:  "شكلمة" , price:"300 جنيه" , img: `${shklma}` },
-        { name:  "بسيمة" , price:"300 جنيه" , img: `${bsema}` },
-        { name:  "شهد" , price:"200 جنيه" , img: `${shhd}` },
-        { name:  "اسبانيا" , price:"200 جنيه" , img: `${esp}` },
-        { name:  "نمورة" , price:"200 جنيه" , img: `${nmora}` },
+        { name:  "هريسة شامي" , price:"320 جنيه" , img: `${hressham}` },
+        { name:  "هريسة زبيب" , price:"260 جنيه" , img: `${hreszbeb}` },
+        { name:  "هريسة مكسرات" , price:"360 جنيه" , img: `${hresa}` },
+        { name:  "رموش" , price:"350 جنيه" , img: `${rmosh}` },
+        { name:  "شكلمة" , price:"360 جنيه" , img: `${shklma}` },
+        { name:  "بسيمة" , price:"360 جنيه" , img: `${bsema}` },
+        { name:  "شهد" , price:"260 جنيه" , img: `${shhd}` },
+        { name:  "اسبانيا" , price:"260 جنيه" , img: `${esp}` },
+        { name:  "نمورة" , price:"260 جنيه" , img: `${nmora}` },
         { name:  "دلوعة" , price:"350 جنيه" , img: `${daloaa}` },
-        { name:  "رواني" , price:"275 جنيه" , img: `${rowni}` },
-        { name:  "عزيزة" , price:"200 جنيه" , img: `${aziza}` },
-        { name:  "لينزا بلح" , price:"275 جنيه" , img: `${lenzblh}` },
-        { name:  "لينزا كريمة" , price:"275 جنيه" , img: `${lenzcrem}` },
-        { name:  "بلح الشام سادة" , price:"160 جنيه" , img: `${blhshamsad}` },
-        { name:  "بلح الشام كريمة" , price:"220 جنيه" , img: `${balhshamkr}` },
-        { name:  "بلح الشام نوتيلا" , price:"220 جنيه" , img: `${blhshanotil}` },
-        { name:  "بلح الشام اسبيشيال" , price:"220 جنيه" , img: `${balhshamesp}` },
-        { name:  "مشبك" , price:"200 جنيه" , img: `${mshbk}` },
+        { name:  "رواني" , price:"300 جنيه" , img: `${rowni}` },
+        { name:  "عزيزة" , price:"270 جنيه" , img: `${aziza}` },
+        { name:  "لينزا بلح" , price:"300 جنيه" , img: `${lenzblh}` },
+        { name:  "لينزا كريمة" , price:"300 جنيه" , img: `${lenzcrem}` },
+        { name:  "بلح الشام سادة" , price:"225 جنيه" , img: `${blhshamsad}` },
+        { name:  "بلح الشام كريمة" , price:"275 جنيه" , img: `${balhshamkr}` },
+        { name:  "بلح الشام نوتيلا" , price:"275 جنيه" , img: `${blhshanotil}` },
+        { name:  "بلح الشام اسبيشيال" , price:"275 جنيه" , img: `${balhshamesp}` },
+        { name:  "مشبك" , price:"250 جنيه" , img: `${mshbk}` },
 
       ],
       // فورم 
       27: [
-        { name:  "فورمة بسبوسة سادة" , price:"285 جنيه" , img: `${forbassad}` },
-        { name:  "فورمة بسبوسة بندق" , price:"360 جنيه" , img: `${forbasbnd}` },
-        { name:  "فورمة بسبوسة مكسرات" , price:"360 جنيه" , img: `${fobasmks}` },
-        { name:  "فورمة بقلاوة هاف" , price:"450 جنيه" , img: `${fobklhaf}` },
-        { name:  "فورمة بقلاوة مكسرات" , price:"500 جنيه" , img: `${forbklmks}` },
-        { name:  "فورمة بقلاوة سوري" , price:"415 جنيه" , img: `${forbklsori}` },
-        { name:  "فورمة كنافة سوري" , price:"430 جنيه" , img: `${foknfsor}` },
-        { name:  "فورمة كنافة  كريمة", price:"385 جنيه" , img: `${forknfcrem}` },
-        { name:  "فورمة دلوعة 8 سيزون" , price:"330 جنيه" , img: `${formadaloaa8seson}` },
-        { name:  "فورمة فور سيزون" , price:"330 جنيه" , img: `${formadaloaa4seson}` },
-        { name:  "بوكس شرقي صوصات" , price:"450 جنيه" , img: `${elbasharkisosat}` },
-        { name:  "بوكس بقلاوة تركي" , price:"650 جنيه" , img: `${elbabeklawaturki}` },
+        { name:  "فورمة بسبوسة سادة" , price:"320 جنيه" , img: `${forbassad}` },
+        { name:  "فورمة بسبوسة بندق" , price:"365 جنيه" , img: `${forbasbnd}` },
+        { name:  "فورمة بسبوسة مكسرات" , price:"365 جنيه" , img: `${fobasmks}` },
+        { name:  "فورمة بقلاوة هاف" , price:"425 جنيه" , img: `${fobklhaf}` },
+        { name:  "فورمة بقلاوة مكسرات" , price:"520 جنيه" , img: `${forbklmks}` },
+        { name:  "فورمة بقلاوة سوري" , price:"400 جنيه" , img: `${forbklsori}` },
+        { name:  "فورمة كنافة سوري" , price:"410 جنيه" , img: `${foknfsor}` },
+        { name:  "فورمة كنافة  كريمة", price:"375 جنيه" , img: `${forknfcrem}` },
+        { name:  "فورمة دلوعة 8 سيزون" , price:"390 جنيه" , img: `${formadaloaa8seson}` },
+        { name:  "فورمة فور سيزون" , price:"390 جنيه" , img: `${formadaloaa4seson}` },
+        { name:  "بوكس شرقي صوصات" , price:"475 جنيه" , img: `${elbasharkisosat}` },
+        { name:  "بوكس بقلاوة تركي" , price:"750 جنيه" , img: `${elbabeklawaturki}` },
 
       ],
       
 
       // البقلاوة 
       28:[
-        { name:  "بقلاوة بغاشة" , price:"300 جنيه" , img: `${bklbgash}` },
-        { name:  "بقلاوة كريمة" , price:"310 جنيه" , img: `${bklcrem}` },
-        { name:  "بقلاوة قشطة" , price:"400 جنيه" , img: `${bklesht}` },
-        { name:  "بقلاوة سادة" , price:"200 جنيه" , img: `${bklsda}` },
-        { name:  "بقلاوة لوز" , price:"300 جنيه" , img: `${bklloz}` },
-        { name:  " بقلاوة عش مكسرات" , price:"400 جنيه" , img: `${bklsh}` },
-        { name:  "بقلاوة مشط مكسرات" , price:"400 جنيه" , img: `${bklmsht}` },
-        { name:  "بقلاوة غوايش عين جمل" , price:"475 جنيه" , img: `${bklgaesh}` },
-        { name:  "بقلاوة حجاب عين جمل" , price:"520 جنيه" , img: `${bklhggml}` },
-        { name:  "بقلاوة سيخ مكسرات" , price:"400 جنيه" , img: `${bklsegh}` },
-        { name:  "بقلاوة سكينة قرفة" , price:"300 جنيه" , img: `${bklskerf}` },
-        { name:  "بقلاوة لقمة الباشا" , price:"520 جنيه" , img: `${bklbasha}` },
+        { name:  "بقلاوة بغاشة" , price:"330 جنيه" , img: `${bklbgash}` },
+        { name:  "بقلاوة كريمة" , price:"320 جنيه" , img: `${bklcrem}` },
+        { name:  "بقلاوة قشطة" , price:"425 جنيه" , img: `${bklesht}` },
+        { name:  "بقلاوة سادة" , price:"260 جنيه" , img: `${bklsda}` },
+        { name:  "بقلاوة لوز" , price:"325 جنيه" , img: `${bklloz}` },
+        { name:  " بقلاوة عش مكسرات" , price:"425 جنيه" , img: `${bklsh}` },
+        { name:  "بقلاوة مشط مكسرات" , price:"425 جنيه" , img: `${bklmsht}` },
+        { name:  "بقلاوة غوايش عين جمل" , price:"520 جنيه" , img: `${bklgaesh}` },
+        { name:  "بقلاوة حجاب عين جمل" , price:"575 جنيه" , img: `${bklhggml}` },
+        { name:  "بقلاوة سيخ مكسرات" , price:"575 جنيه" , img: `${bklsegh}` },
+        { name:  "بقلاوة سكينة قرفة" , price:"310 جنيه" , img: `${bklskerf}` },
+        { name:  "بقلاوة لقمة الباشا" , price:"590 جنيه" , img: `${bklbasha}` },
 
       ],
      
@@ -800,117 +800,117 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
     
     // المخبوزات
     29:[
-      { name:  "باتون ساليه 300جم" , price:"60 جنيه" , img: `${mkh1}` },
-      { name:  "قراقيش سادة 300جم" , price:"95 جنيه" , img: `${mkh2}` },
-      { name:  "قراقيش عجوة 300جم" , price:"65 جنيه" , img: `${mkh3}` },
-      { name:  "قرص سادة 300جم" , price:"60 جنيه" , img: `${mkh4}` },
-      { name:  "قرص عجوة 300جم" , price:"65 جنيه" , img: `${mkh5}` },
-      { name:  "تراسينا 300جم" , price:"60 جنيه" , img: `${mkh6}` },
-      { name:  "بالمية 300جم" , price:"85 جنيه" , img: `${mkh7}` },
-      { name:  "محوجة 500جم" , price:"150 جنيه" , img: `${mkh8}` },
-      { name:  "كوكيز 500جم" , price:"175 جنيه" , img: `${mkh9}` },
+      { name:  "باتون ساليه 300جم" , price:"90 جنيه" , img: `${mkh1}` },
+      { name:  "قراقيش سادة 300جم" , price:"90 جنيه" , img: `${mkh2}` },
+      { name:  "قراقيش عجوة 300جم" , price:"90 جنيه" , img: `${mkh3}` },
+      { name:  "قرص سادة 300جم" , price:"90 جنيه" , img: `${mkh4}` },
+      { name:  "قرص عجوة 300جم" , price:"80 جنيه" , img: `${mkh5}` },
+      { name:  "تراسينا 300جم" , price:"75 جنيه" , img: `${mkh6}` },
+      { name:  "بالمية 300جم" , price:"120 جنيه" , img: `${mkh7}` },
+      { name:  "محوجة 500جم" , price:"160 جنيه" , img: `${mkh8}` },
+      { name:  "كوكيز 500جم" , price:"170 جنيه" , img: `${mkh9}` },
 
     ],
 
     //  الفطائر
     30:[
-      { name:  "فطير سادة" , price:"175 جنيه" , img: `${ftrsad}` },
-      { name:  "فطير رومي" , price:"250 جنيه" , img: `${ftrrom}` },
-      { name:  "فطير كريمة مكسرات" , price:"200 جنيه" , img: `${ftkremks}` },
-      { name:  "فطير بلح" , price:"175 جنيه" , img: `${fterblh}` },
-      { name:  "فطير لوتس" , price:"250 جنيه" , img: `${ftrlots}` },
-      { name:  "فطير ميني بالسكر" , price:"120 جنيه" , img: `${ftrminskr}` },
+      { name:  "فطير سادة" , price:"220 جنيه" , img: `${ftrsad}` },
+      { name:  "فطير رومي" , price:"300 جنيه" , img: `${ftrrom}` },
+      { name:  "فطير كريمة مكسرات" , price:"250 جنيه" , img: `${ftkremks}` },
+      { name:  "فطير بلح" , price:"230 جنيه" , img: `${fterblh}` },
+      { name:  "فطير لوتس" , price:"300 جنيه" , img: `${ftrlots}` },
+      { name:  "فطير ميني بالسكر" , price:"175 جنيه" , img: `${ftrminskr}` },
       // { name:  "فطير حلو" , price:" جنيه" , img: `${ftrhlw}` },
 
     ],
 
     // المعجنات
      31:[
-      { name:  "فوكاشيا طماطم" , price:"50 جنيه" , img: `${mog1}` },
-      { name:  "فوكاشيا بيستو" , price:"55 جنيه" , img: `${mog2}` },
-      { name:  "بوكس بريك فاست" , price:"100 جنيه" , img: `${mog3}` },
-      { name:  "بوكس ساليزون ميكس" , price:"350 جنيه" , img: `${mog4}` },
-      { name:  "بوكس ميني بيتزا" , price:"200 جنيه" , img: `${mog5}` },
-      { name:  "بوكس كانبيه" , price:"400 جنيه" , img: `${mog6}` },
-      { name:  "بوكس ميني فطاير ميكس" , price:"250 جنيه" , img: `${mog7}` },
-      { name:  "بوكس ميني ساندوتش مشكل" , price:"220 جنيه" , img: `${mog8}` },
+      { name:  "فوكاشيا طماطم" , price:"70 جنيه" , img: `${mog1}` },
+      { name:  "فوكاشيا بيستو" , price:"70 جنيه" , img: `${mog2}` },
+      { name:  "بوكس بريك فاست" , price:"110 جنيه" , img: `${mog3}` },
+      { name:  "بوكس ساليزون ميكس" , price:"360 جنيه" , img: `${mog4}` },
+      { name:  "بوكس ميني بيتزا" , price:"310 جنيه" , img: `${mog5}` },
+      { name:  "بوكس كانبيه" , price:"350 جنيه" , img: `${mog6}` },
+      { name:  "بوكس ميني فطاير ميكس" , price:"260 جنيه" , img: `${mog7}` },
+      { name:  "بوكس ميني ساندوتش مشكل" , price:"255 جنيه" , img: `${mog8}` },
 
      ],
     //  دونات وسينامون
     32:[
-      { name:  "ميني سينابون" , price:"50 جنيه" , img: `${ds1}` },
-      { name:  "دونات كيندر" , price:"55 جنيه" , img: `${ds2}` },
-      { name:  "دونات لوتس" , price:"65 جنيه" , img: `${ds3}` },
-      { name:  "دونات نوتيلا" , price:"50 جنيه" , img: `${ds4}` },
-      { name:  "دونات فستق" , price:"60 جنيه" , img: `${ds5}` },
-      { name:  "سينامون شوكلت" , price:"65 جنيه" , img: `${ds6}` },
-      { name:  "سينامون قرفة" , price:"60 جنيه" , img: `${ds7}` },
-      { name:  "سينامون بستاشيو" , price:"75 جنيه" , img: `${ds8}` },
-      { name:  "بوكس ميني دونات" , price:"250 جنيه" , img: `${ds9}` },
-      { name:  "بوكس ميني بامبولوني" , price:"260 جنيه" , img: `${ds10}` },
+      { name:  "ميني سينابون" , price:"60 جنيه" , img: `${ds1}` },
+      { name:  "دونات كيندر" , price:"65 جنيه" , img: `${ds2}` },
+      { name:  "دونات لوتس" , price:"70 جنيه" , img: `${ds3}` },
+      { name:  "دونات نوتيلا" , price:"60 جنيه" , img: `${ds4}` },
+      { name:  "دونات فستق" , price:"70 جنيه" , img: `${ds5}` },
+      { name:  "سينامون شوكلت" , price:"75 جنيه" , img: `${ds6}` },
+      { name:  "سينامون قرفة" , price:"70 جنيه" , img: `${ds7}` },
+      { name:  "سينامون بستاشيو" , price:"85 جنيه" , img: `${ds8}` },
+      { name:  "بوكس ميني دونات" , price:"255 جنيه" , img: `${ds9}` },
+      { name:  "بوكس ميني بامبولوني" , price:"295 جنيه" , img: `${ds10}` },
 
     ],
     // كرواسون
     33:[
-      { name:  "كرواسون زبدة" , price:"50 جنيه" , img: `${krw1}` },
-      { name:  "كرواسون زعتر" , price:"50 جنيه" , img: `${krw2}` },
-      { name:  "كرواسون كيري" , price:"55 جنيه" , img: `${krw3}` },
-      { name:  "كرواسون شوكلت" , price:"55 جنيه" , img: `${krw4}` },
-      { name:  "كرواسون لوز" , price:"65 جنيه" , img: `${krw5}` },
-      { name:  "كرواسون رول نوتيلا" , price:"60 جنيه" , img: `${krw6}` },
-      { name:  "كرواسون رول بستاشيو" , price:"65 جنيه" , img: `${krw7}` },
-      { name:  "ساندوتش كرواسون تركي مدخن" , price:"90 جنيه" , img: `${krw8}` },
-      { name:  "ساندوتش كرواسون فاهيتا فراخ" , price:"80 جنيه" , img: `${krw9}` },
-      { name:  "ساندوتش كرواسون تونة" , price:"85 جنيه" , img: `${krw10}` },
+      { name:  "كرواسون زبدة" , price:"55 جنيه" , img: `${krw1}` },
+      { name:  "كرواسون زعتر" , price:"55 جنيه" , img: `${krw2}` },
+      { name:  "كرواسون كيري" , price:"75 جنيه" , img: `${krw3}` },
+      { name:  "كرواسون شوكلت" , price:"80 جنيه" , img: `${krw4}` },
+      { name:  "كرواسون لوز" , price:"80 جنيه" , img: `${krw5}` },
+      { name:  "كرواسون رول نوتيلا" , price:"80 جنيه" , img: `${krw6}` },
+      { name:  "كرواسون رول بستاشيو" , price:"95 جنيه" , img: `${krw7}` },
+      { name:  "ساندوتش كرواسون تركي مدخن" , price:"95 جنيه" , img: `${krw8}` },
+      { name:  "ساندوتش كرواسون فاهيتا فراخ" , price:"85 جنيه" , img: `${krw9}` },
+      { name:  "ساندوتش كرواسون تونة" , price:"90 جنيه" , img: `${krw10}` },
       { name:  "ساندوتش كرواسون جبنة لحوم" , price:"75 جنيه" , img: `${waiting}` },
       { name:  "ساندوتش كرواسون مكس جبن" , price:"75 جنيه" , img: `${waiting}` },
-      { name:  "بوكس ميني كرواسون حادق" , price:"250 جنيه" , img: `${krw13}` },
-      { name:  "بوكس ميني كرواسون حلو" , price:"250 جنيه" , img: `${krw14}` },
+      { name:  "بوكس ميني كرواسون حادق" , price:"275 جنيه" , img: `${krw13}` },
+      { name:  "بوكس ميني كرواسون حلو" , price:"275 جنيه" , img: `${krw14}` },
 
     ],     
     // دانش
     34:[
-      { name:  "دانش زيتون و زعتر" , price:"40 جنيه" , img: `${dan1}` },
-      { name:  "دانش سوسيس و بسطرمة" , price:"40 جنيه" , img: `${dan2}` },
-      { name:  "دانش فاكهة" , price:"50 جنيه" , img: `${dan3}` },
-      { name:  "دانش كريم بورليه" , price:"60 جنيه" , img: `${dan4}` },
-      { name:  "دانش هازلنت" , price:"50 جنيه" , img: `${dan5}` },
-      { name:  "بوكس ميني دانش حلو" , price:"200 جنيه" , img: `${dan6}` },
-      { name:  "بوكس ميني دانش حادق" , price:"200 جنيه" , img: `${dan7}` },
-      { name:  "بان شوكلت" , price:"55 جنيه" , img: `${dan8}` },
-      { name:  "بان سويس" , price:"60 جنيه" , img: `${dan9}` },
+      { name:  "دانش زيتون و زعتر" , price:"50 جنيه" , img: `${dan1}` },
+      { name:  "دانش سوسيس و بسطرمة" , price:"60 جنيه" , img: `${dan2}` },
+      { name:  "دانش فاكهة" , price:"65 جنيه" , img: `${dan3}` },
+      { name:  "دانش كريم بورليه" , price:"70 جنيه" , img: `${dan4}` },
+      { name:  "دانش هازلنت" , price:"65 جنيه" , img: `${dan5}` },
+      { name:  "بوكس ميني دانش حلو" , price:"260 جنيه" , img: `${dan6}` },
+      { name:  "بوكس ميني دانش حادق" , price:"255 جنيه" , img: `${dan7}` },
+      { name:  "بان شوكلت" , price:"65 جنيه" , img: `${dan8}` },
+      { name:  "بان سويس" , price:"70 جنيه" , img: `${dan9}` },
 
     ],
 
     // النواعمممممممممممممممممممممممممممممممممممممممممممممممممممم
     // الكعك
     35:[
-      { name:  "كعك سادة" , price:"315 جنيه" , img: `${kaaksad}` },
-      { name:  "كعك ملبن" , price:"280 جنيه" , img: `${kaakmlbn}` },
-      { name:  "كعك عجمية" , price:"290 جنيه" , img: `${kaakagmia}` },
-      { name:  "كعك عجمية عين جمل" , price:"350 جنيه" , img: `${kaakagmgamal}` },
-      { name:  "كعك عين جمل" , price:"370 جنيه" , img: `${kaakgamal}` },
-      { name:  "كعك ملبن مكسرات" , price:"350 جنيه" , img: `${kaakmlbnmks}` },
-      { name:  "غريبة لوز" , price:"350 جنيه" , img: `${ghreba}` },
+      { name:  "كعك سادة" , price:"330 جنيه" , img: `${kaaksad}` },
+      { name:  "كعك ملبن" , price:"305 جنيه" , img: `${kaakmlbn}` },
+      { name:  "كعك عجمية" , price:"320 جنيه" , img: `${kaakagmia}` },
+      { name:  "كعك عجمية عين جمل" , price:"360 جنيه" , img: `${kaakagmgamal}` },
+      { name:  "كعك عين جمل" , price:"380 جنيه" , img: `${kaakgamal}` },
+      { name:  "كعك ملبن مكسرات" , price:"360 جنيه" , img: `${kaakmlbnmks}` },
+      { name:  "غريبة لوز" , price:"340 جنيه" , img: `${ghreba}` },
 
     ],
 // البسكويت
     36:[
       // { name:  "بسكويت" , price:" جنيه" , img: `${bask}` },
-      { name:  "بسكويت نشادر" , price:"250 جنيه" , img: `${basknash}` },
-      { name:  "بسكويت وايت شوكلت & فستق" , price:"350 جنيه" , img: `${bskwchocfs}` },
+      { name:  "بسكويت نشادر" , price:"270 جنيه" , img: `${basknash}` },
+      { name:  "بسكويت وايت شوكلت & فستق" , price:"370 جنيه" , img: `${bskwchocfs}` },
       // { name:  "بسكويت برتقال" , price:" جنيه" , img: `${bskbrtkal}` },
       // { name:  "بسكويت جوز هند" , price:" جنيه" , img: `${bskgoz}` },
 
     ],
     // بيتي فور وسابليه
     37:[
-      { name:  "بيتي فور ابيض" , price:"350 جنيه" , img: `${btfabiad}` },
-      { name:  "بيتي فور شيكولاتة" , price:"350 جنيه" , img: `${btfchoc}` },
-      { name:  "بيتي فور صوصات" , price:"300 جنيه" , img: `${btfsos}` },
-      { name:  "كوكيز صوصات" , price:"300 جنيه" , img: `${coksos}` },
-      { name:  "سابليه" , price:"420 جنيه" , img: `${able}` },
-      { name:  "ميني تارت" , price:"420 جنيه" , img: `${minitart}` },
+      { name:  "بيتي فور ابيض" , price:"360 جنيه" , img: `${btfabiad}` },
+      { name:  "بيتي فور شيكولاتة" , price:"360 جنيه" , img: `${btfchoc}` },
+      { name:  "بيتي فور صوصات" , price:"360 جنيه" , img: `${btfsos}` },
+      { name:  "كوكيز صوصات" , price:"400 جنيه" , img: `${coksos}` },
+      { name:  "سابليه" , price:"400 جنيه" , img: `${able}` },
+      { name:  "ميني تارت" , price:"400 جنيه" , img: `${minitart}` },
 
     ],
    
@@ -973,7 +973,8 @@ const Products = ({searchText,selectedSubCategory,setSelectedSubCategory}) => {
 
          };
 
-    const allProducts = Object.values(products).flat(); // دمج جميع المنتجات
+    // const allProducts = Object.values(products).flat(); // دمج جميع المنتجات
+const allProducts = useMemo(() => Object.values(products).flat(), [products]);
 
 // فلترة المنتجات بناءً على نص البحث (جميع المنتجات دائمًا)
 const searchFilteredProducts = allProducts.filter((product) =>
@@ -999,7 +1000,7 @@ const displayedProducts =
 
 
 
-      const ProductCard = ({ product }) => {
+      const ProductCard = React.memo(({ product }) => {
         const [loading, setLoading] = useState(true);
       
         return (
@@ -1082,7 +1083,7 @@ const displayedProducts =
             </div>
           </div>
         );
-      };
+      });
 
 
 
@@ -1094,7 +1095,7 @@ const displayedProducts =
         <div className="product-par">
           {displayedProducts.length > 0 ? (
             displayedProducts.map((product, index) => (
-              <ProductCard key={index} product={product} />
+              <ProductCard key={product.id} product={product} />
             ))
           ) : null}
         </div>

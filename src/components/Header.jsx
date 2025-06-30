@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { FaMagnifyingGlass, FaSquareFacebook, FaSquareInstagram } from 'react-icons/fa6';
 
 
 const Header = ({searchText,setSearchText,handleScrollToProducts}) => {
@@ -28,16 +29,16 @@ const Header = ({searchText,setSearchText,handleScrollToProducts}) => {
      <div>
 <ul id="left-navbar">
  
-<li className='navbar-icon-list-fac'><a href='https://www.facebook.com/share/19h7fcbJpC/?mibextid=wwXIfr' target='_blank'><i className="fa-brands fa-square-facebook" style = {{color:"#12424c",fontSize:"30px",cursor:"pointer"}}></i></a></li>
-<li className='navbar-icon-list-ins'><a href='https://www.instagram.com/qasralbaronpatisserie?igsh=MWh1MW4wMDN2MDBncA==' target='_blank'><i className="fa-brands fa-square-instagram" style = {{color:"#12424c",fontSize:"30px",cursor:"pointer",margin:"0 0 0 20px" ,}}></i></a></li>
+<li className='navbar-icon-list-fac'><a href='https://www.facebook.com/share/19h7fcbJpC/?mibextid=wwXIfr' aria-label="facebook-icon" target='_blank'><FaSquareFacebook  style = {{color:"#12424c",fontSize:"30px",cursor:"pointer"}}/></a></li>
+<li className='navbar-icon-list-ins'><a href='https://www.instagram.com/qasralbaronpatisserie?igsh=MWh1MW4wMDN2MDBncA==' aria-label="insta-icon" target='_blank'><FaSquareInstagram  style = {{color:"#12424c",fontSize:"30px",cursor:"pointer",margin:"0 0 0 20px" ,}}/></a></li>
     
 </ul>
 </div>
 <div>
-<ul className='search-container'>
+<div className='search-container'>
   <div style={{position: "absolute",
     top: "9px",
-    right: "12px",}}><i class="fa-solid fa-magnifying-glass" style="color: #eeeeee;"></i></div>
+    right: "12px",}}><FaMagnifyingGlass style={{color:"#eeeeee"}}/></div>
     <input className='search-input'
       type="text"
       placeholder="   البحث عن منتج ..."
@@ -45,7 +46,7 @@ const Header = ({searchText,setSearchText,handleScrollToProducts}) => {
       onChange={(e) =>{ setSearchText(e.target.value); handleScrollToProducts()}} // تحديث نص البحث
     />
 
-</ul>
+</div>
 </div>
 
 

@@ -1,5 +1,4 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import './app.css'
 import Categories from './components/Categories'
 import Header from './components/Header'
 import SubCategories from './components/SubCategories'
@@ -60,7 +59,7 @@ export function App() {
     return (
       <div className="loading-screen">
         <p className="lod-text">... مرحباً بك في منيو قصر البارون</p>
-        <img src={logog} alt="Loading..." className="loading-image" />
+        <img   src={logog} alt="Loading..." width="295" height="auto" className="loading-image" />
         <div className="loading-circle"></div>
       </div>
     );

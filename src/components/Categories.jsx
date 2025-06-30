@@ -1,9 +1,9 @@
 import React from 'react'
-import elbasharqi from '../images/shrqii3.png'
-import gharpii from '../images/frfr3.png'
-import ice from '../images/ice.png'
-import mognat from '../images/mognat4.png'
-import nawam from '../images/bskbsk.png'
+import elbasharqi from '../images/shrqii3.webp'
+import gharpii from '../images/frfr3.webp'
+import ice from '../images/ice.webp'
+import mognat from '../images/mognat4.webp'
+import nawam from '../images/bskbsk.webp'
 const Categories = ({selectedCategory,setSelectedCategory,setSelectedSubCategory,handleScrollToSubCategories}) => {
     const categories = [
         { id: 2,className: "sharqi", name:  "شرقي" , img: `${elbasharqi}` },
